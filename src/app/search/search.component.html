@@ -1,0 +1,16 @@
+<div class="row mt-5">
+    <div class="jumbotron offset-3">
+        <h1 class="display-4">Bilan par pays!</h1>
+        <p class="lead">Choisir un pays pour l'etat d'avancement de la Covid-19 dans ce pays.</p>
+        <hr class="my-4">
+        <div class="input-group">
+            <select class="custom-select" id="c" #input (change)='updateValues(input.value)' >
+              <option value="{{con}}" *ngFor='let con of countries'>{{con}}</option>
+            </select>
+          </div>
+      </div>
+      <div class="container">
+      <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalDeaths]='totalDeaths'
+      [totalRecovered]='totalRecovered' [totalActive]='totalActive'></app-dashboard-card>
+      </div>
+</div>  
